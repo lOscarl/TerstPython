@@ -1,11 +1,10 @@
 class Triplets:
-	def review():
 
-		pass
 	def __init__(self, entry1, entry2):
 		self.entry1 = entry1
 		self.entry2 = entry2
 		self.length = len(entry1)
+		self.score = [0,0]
 
 		if self.length != 3:
 			raise Exception('Bad data size')
@@ -17,8 +16,7 @@ class Triplets:
 			if not (1 <= element <= 100):
 				raise Exception('Data out of range')
 		
-		self.score = [0,0]
-
+	def review(self):
 		for challenge in range(self.length):
 			if self.entry1[challenge] > self.entry2[challenge]:
 				self.score[0] = self.score[0] + 1

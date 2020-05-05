@@ -56,21 +56,28 @@ class TestLimit(TestTriplets):
 class TestComparation(TestTriplets):
 	def test_point_for_Alice(self):
 		self.triplets = Triplets( [2,1,1] , [1,1,1] )
+		self.triplets.review()
 		self.assertEqual(self.triplets.score[0], 1)
 		self.triplets = Triplets( [1,2,1] , [1,1,1] )
+		self.triplets.review()
 		self.assertEqual(self.triplets.score[0], 1)
 		self.triplets = Triplets( [1,1,2] , [1,1,1] )
+		self.triplets.review()
 		self.assertEqual(self.triplets.score[0], 1)
 	
 	def test_point_for_Bob(self):
 		self.triplets = Triplets( [1,1,1] , [2,1,1] )
+		self.triplets.review()
 		self.assertEqual(self.triplets.score[1], 1)
 		self.triplets = Triplets( [1,1,1] , [1,2,1] )
+		self.triplets.review()
 		self.assertEqual(self.triplets.score[1], 1)
 		self.triplets = Triplets( [1,1,1] , [1,1,2] )
+		self.triplets.review()
 		self.assertEqual(self.triplets.score[1], 1)
 
 	def test_no_point(self):
 		self.triplets = Triplets( [1,1,1] , [1,1,1] )
+		self.triplets.review()
 		self.assertEqual(self.triplets.score[0], 0)
 		self.assertEqual(self.triplets.score[1], 0)
